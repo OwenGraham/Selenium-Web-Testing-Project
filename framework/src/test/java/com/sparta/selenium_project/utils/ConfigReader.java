@@ -9,7 +9,7 @@ public class ConfigReader {
     private static Properties properties = new Properties();
 
     static {
-        try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("config.properties")) {
+        try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("properties/config.properties")) {
             if (input != null) {
                 properties.load(input);
             } else {

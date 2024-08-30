@@ -4,30 +4,36 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.IOException;
 
 public class DriverManager {
 
-    private static WebDriver driver;
-    private static ChromeDriverService service;
+    private WebDriver driver;
+    private ChromeDriverService service;
 
-    // Singleton pattern to ensure only one instance of WebDriver is created
-    public static WebDriver getDriver() {
-        if (driver == null) {
+    public DriverManager() {
+        startService();
+        driver = new RemoteWebDriver(service.getUrl(), getChromeOptions());
+    }
+
+    // Get the WebDriver instance
+    public WebDriver getDriver() {
+        if (driver == null || !service.isRunning()) {
             startService();
-            driver = new ChromeDriver(service, getChromeOptions());
+            driver = new RemoteWebDriver(service.getUrl(), getChromeOptions());
         }
         return driver;
     }
 
     // Start ChromeDriverService
-    private static void startService() {
+    private void startService() {
         if (service == null) {
             service = new ChromeDriverService.Builder()
                     .usingAnyFreePort()
-                    .usingDriverExecutable(new File(ConfigReader.getProperty("base.url")))
+                    .usingDriverExecutable(new File(ConfigReader.getProperty("driver.location")))
                     .build();
             try {
                 service.start();
@@ -38,24 +44,20 @@ public class DriverManager {
     }
 
     // Provide ChromeOptions to configure the WebDriver
-    private static ChromeOptions getChromeOptions() {
+    private ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-notifications");
         options.addArguments("--start-maximized");
-        // Add more options as needed
+        options.addArguments("headless");
         return options;
     }
 
     // Quit WebDriver and stop ChromeDriverService
-    public static void quitDriver() {
+    public void quitDriver() {
         if (driver != null) {
             driver.quit();
             driver = null;
         }
-        if (service != null && service.isRunning()) {
-            service.stop();
-        }
     }
 }
-

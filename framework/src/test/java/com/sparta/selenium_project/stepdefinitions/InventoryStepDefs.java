@@ -1,7 +1,9 @@
 package com.sparta.selenium_project.stepdefinitions;
 
+import com.sparta.selenium_project.pages.CartPage;
 import com.sparta.selenium_project.pages.InventoryItem;
 import com.sparta.selenium_project.pages.InventoryPage;
+import com.sparta.selenium_project.pages.ProductPage;
 import com.sparta.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -15,6 +17,8 @@ import java.util.List;
 public class InventoryStepDefs {
     private WebDriver webDriver;
     private InventoryPage inventoryPage;
+    private CartPage cartPage;
+    private ProductPage productPage;
 
     public InventoryStepDefs(){
         this.webDriver = PicoContainerConfig.getContainer().getComponent(WebDriver.class);
@@ -60,17 +64,90 @@ public class InventoryStepDefs {
         }
     }
 
-
-
     @When("the user clicks the Add to cart button for a product")
     public void theUserClicksTheAddToCartButtonForAProduct() {
         List<InventoryItem> items = inventoryPage.getItems();
         items.getFirst().getAddToCartButton().click();
     }
 
-    @And("the number displayed next to the cart icon should increment by one")
-    public void theNumberDisplayedNextToTheCartIconShouldIncrementByOne() {
+    @Then("the product should be added to the cart")
+    public void theProductShouldBeAddedToTheCart() {
+        List<InventoryItem> items = inventoryPage.getItems();
+        cartPage = new CartPage(inventoryPage.goToCart());
+        Assertions.assertTrue(cartPage.hasItem(items.getFirst().getName()));
+    }
+
+    @And("the user has added a product to the cart")
+    public void theUserHasAddedAProductToTheCart() {
+        inventoryPage.getItems().getFirst().getAddToCartButton().click();
+    }
+
+    @When("the user clicks the Remove button for that product")
+    public void theUserClicksTheRemoveButtonForThatProduct() {
+        inventoryPage.getItems().getFirst().getAddToCartButton().click();
+    }
+
+    @Then("the product should be removed from the cart")
+    public void theProductShouldBeRemovedFromTheCart() {
+        List<InventoryItem> items = inventoryPage.getItems();
+        cartPage = new CartPage(inventoryPage.goToCart());
+        Assertions.assertFalse(cartPage.hasItem(items.getFirst().getName()));
+    }
+
+    @And("the number displayed next to the cart icon should decrement by one")
+    public void theNumberDisplayedNextToTheCartIconShouldDecrementByOne() {
+        Assertions.assertTrue(webDriver.findElements(By.className("shopping_cart_badge")).isEmpty());
+    }
+
+    @When("the user adds {int} products to the cart")
+    public void theUserAddsProductsToTheCart(int quantity) {
+        List<InventoryItem> items = inventoryPage.getItems();
+        for (int i = 0; i < quantity; i++) {
+            items.get(i).getAddToCartButton().click();
+        }
+    }
+
+    @Then("all {int} selected products should be added to the cart")
+    public void allSelectedProductsShouldBeAddedToTheCart(int quantity) {
+        List<InventoryItem> items = inventoryPage.getItems();
+        cartPage = new CartPage(inventoryPage.goToCart());
+        for (int i = 0; i < quantity; i++) {
+            Assertions.assertTrue(cartPage.hasItem(items.get(i).getTitle()));
+        }
+    }
+
+    @And("the cart icon should display the number {int}")
+    public void theCartIconShouldDisplayTheNumber(int quantity) {
         int cartSize = Integer.parseInt(webDriver.findElement(By.className("shopping_cart_badge")).getText());
-        Assertions.assertEquals(1,cartSize);
+        Assertions.assertEquals(quantity,cartSize);
+    }
+
+    @Then("the products should be displayed in alphabetical order \\(A to Z)")
+    public void theProductsShouldBeDisplayedInAlphabeticalOrderAToZ() {
+        List<InventoryItem> items = inventoryPage.getItems();
+        Assertions.assertTrue(inventoryPage.itemsInOrderAZ(items));
+    }
+
+    @Then("the products should be displayed in reverse alphabetical order \\(Z to A)")
+    public void theProductsShouldBeDisplayedInReverseAlphabeticalOrderZToA() {
+        List<InventoryItem> items = inventoryPage.getItems();
+        Assertions.assertTrue(inventoryPage.itemsInOrderZA(items));
+    }
+
+    @When("the user clicks on a product's name")
+    public void theUserClicksOnAProductSName() {
+        inventoryPage.getItems().getFirst().getItemLink().click();
+        productPage = new ProductPage(webDriver);
+
+    }
+
+    @Then("the user should be redirected to the product's detail page")
+    public void theUserShouldBeRedirectedToTheProductSDetailPage() {
+        Assertions.assertEquals("https://www.saucedemo.com/v1/inventory-item.html?id=4",webDriver.getCurrentUrl());
+    }
+
+    @And("the user should see detailed information about the product")
+    public void theUserShouldSeeDetailedInformationAboutTheProduct() {
+        Assertions.assertFalse(productPage.getDescription().isEmpty());
     }
 }

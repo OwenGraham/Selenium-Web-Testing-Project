@@ -27,39 +27,39 @@ Feature: Inventory Page Functionality
   Scenario: Adding a product to the cart
     Given the user is on the "INVENTORY" page
     When the user clicks the Add to cart button for a product
-#    Then the product should be added to the cart
-    And the number displayed next to the cart icon should increment by one
-#
-#  @functional @positive @cart
-#  Scenario: Removing a product from the cart
-#    Given the user has added a product to the cart
-#    And the user is on the inventory page
-#    When the user clicks the "Remove" button for that product
-#    Then the product should be removed from the cart
-#    And the number displayed next to the cart icon should decrement by one
-#
-#  @functional @positive @cart
-#  Scenario: Adding multiple products to the cart
-#    Given the user is on the inventory page
-#    When the user adds several products to the cart
-#    Then all selected products should be added to the cart
-#    And the cart icon should reflect the total number of items added
-#
-#  @functional @positive
-#  Scenario: Sorting products by name (A to Z)
-#    Given the user is on the inventory page
-#    When the user selects the "Name (A to Z)" option from the sort dropdown
-#    Then the products should be displayed in alphabetical order (A to Z)
-#
-#  @functional @positive
-#  Scenario: Sorting products by name (Z to A)
-#    Given the user is on the inventory page
-#    When the user selects the "Name (Z to A)" option from the sort dropdown
-#    Then the products should be displayed in reverse alphabetical order (Z to A)
-#
-#  @functional @positive
-#  Scenario: Viewing product details from the inventory page
-#    Given the user is on the inventory page
-#    When the user clicks on a product's name or image
-#    Then the user should be redirected to the product's detail page
-#    And the user should see detailed information about the product
+    Then the product should be added to the cart
+    And the cart icon should display the number 1
+
+  @functional @positive @cart
+  Scenario: Removing a product from the cart
+    Given the user is on the "INVENTORY" page
+    And the user has added a product to the cart
+    When the user clicks the Remove button for that product
+    Then the product should be removed from the cart
+    And the number displayed next to the cart icon should decrement by one
+
+  @functional @positive @cart
+  Scenario: Adding multiple products to the cart
+    Given the user is on the "INVENTORY" page
+    When the user adds 3 products to the cart
+    Then all 3 selected products should be added to the cart
+    And the cart icon should display the number 3
+
+  @functional @positive
+  Scenario: Sorting products by name (A to Z)
+    Given the user is on the "INVENTORY" page
+    When the user selects the "Name (A to Z)" option from the sort dropdown
+    Then the products should be displayed in alphabetical order (A to Z)
+
+  @functional @positive
+  Scenario: Sorting products by name (Z to A)
+    Given the user is on the "INVENTORY" page
+    When the user selects the "Name (Z to A)" option from the sort dropdown
+    Then the products should be displayed in reverse alphabetical order (Z to A)
+
+  @functional @positive
+  Scenario: Viewing product details from the inventory page
+    Given the user is on the "INVENTORY" page
+    When the user clicks on a product's name
+    Then the user should be redirected to the product's detail page
+    And the user should see detailed information about the product

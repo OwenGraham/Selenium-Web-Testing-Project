@@ -15,7 +15,7 @@ public class Hooks {
     @Before
     public void setUp() {
         testContext.playwright = Playwright.create();
-        testContext.browser = testContext.playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        testContext.browser = testContext.playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
         testContext.context = testContext.browser.newContext();
         testContext.page = testContext.context.newPage();
     }

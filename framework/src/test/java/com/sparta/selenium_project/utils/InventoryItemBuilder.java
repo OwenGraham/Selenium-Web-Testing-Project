@@ -1,12 +1,9 @@
 package com.sparta.selenium_project.utils;
 
 import com.sparta.selenium_project.pages.InventoryItem;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class InventoryItemBuilder{
-    private WebDriver webDriver;
 
     public String title;
     public String description;

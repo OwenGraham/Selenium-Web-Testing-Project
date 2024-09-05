@@ -1,25 +1,26 @@
-package com.sparta.selenium_project.stepdefinitions;
+package com.sparta.selenium_project.playwright;
 
-import com.sparta.selenium_project.pages.*;
-import com.sparta.selenium_project.utils.PicoContainerConfig;
+import com.sparta.selenium_project.pages.PlaywrightCartPage;
+import com.sparta.selenium_project.pages.PlaywrightInventoryItem;
+import com.sparta.selenium_project.pages.PlaywrightInventoryPage;
+import com.sparta.selenium_project.pages.PlaywrightProductPage;
+import com.sparta.selenium_project.utils.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public class InventoryStepDefs {
-    private WebDriver webDriver;
-    private InventoryPage inventoryPage;
-    private CartPage cartPage;
-    private ProductPage productPage;
+public class InventoryPlaywrightStepDefs {
+    private final TestContext testContext;
+    private PlaywrightInventoryPage inventoryPage;
+    private PlaywrightCartPage cartPage;
+    private PlaywrightProductPage productPage;
 
-    public InventoryStepDefs(){
-        this.webDriver = PicoContainerConfig.getContainer().getComponent(WebDriver.class);
-        inventoryPage = new InventoryPage(webDriver);
+    public InventoryPlaywrightStepDefs(TestContext testContext) {
+        this.testContext = testContext;
+        inventoryPage = new PlaywrightInventoryPage(testContext);
     }
 
     @Then("the user should see a list of available products")
@@ -29,8 +30,8 @@ public class InventoryStepDefs {
 
     @And("each product should display its name, description, and price")
     public void eachProductShouldDisplayItsNameDescriptionAndPrice() {
-        List<InventoryItem> items = inventoryPage.getItems();
-        for (InventoryItem item : items){
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
+        for (PlaywrightInventoryItem item : items){
             Assertions.assertFalse(item.getName().isEmpty());
             Assertions.assertFalse(Float.toString(item.getPrice()).isEmpty());
             Assertions.assertFalse(item.getDescription().isEmpty());
@@ -45,7 +46,7 @@ public class InventoryStepDefs {
     @Then("the products should be displayed in ascending order of price")
     public void theProductsShouldBeDisplayedInAscendingOrderOfPrice() {
         float current = 0;
-        for (InventoryItem item : inventoryPage.getItems()){
+        for (PlaywrightInventoryItem item : inventoryPage.getItems()){
             Assertions.assertTrue(item.getPrice() >= current);
             current = item.getPrice();
         }
@@ -53,9 +54,9 @@ public class InventoryStepDefs {
 
     @Then("the products should be displayed in descending order of price")
     public void theProductsShouldBeDisplayedInDescendingOrderOfPrice() {
-        List<InventoryItem> items = inventoryPage.getItems();
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
         float current = items.getFirst().getPrice();
-        for (InventoryItem item : items){
+        for (PlaywrightInventoryItem item : items){
             Assertions.assertTrue(item.getPrice() <= current);
             current = item.getPrice();
         }
@@ -63,14 +64,14 @@ public class InventoryStepDefs {
 
     @When("the user clicks the Add to cart button for a product")
     public void theUserClicksTheAddToCartButtonForAProduct() {
-        List<InventoryItem> items = inventoryPage.getItems();
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
         items.getFirst().getAddToCartButton().click();
     }
 
     @Then("the product should be added to the cart")
     public void theProductShouldBeAddedToTheCart() {
-        List<InventoryItem> items = inventoryPage.getItems();
-        cartPage = new CartPage(inventoryPage.goToCart());
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
+        cartPage = new PlaywrightCartPage(inventoryPage.goToCart());
         Assertions.assertTrue(cartPage.hasItem(items.getFirst().getName()));
     }
 
@@ -86,19 +87,19 @@ public class InventoryStepDefs {
 
     @Then("the product should be removed from the cart")
     public void theProductShouldBeRemovedFromTheCart() {
-        List<InventoryItem> items = inventoryPage.getItems();
-        cartPage = new CartPage(inventoryPage.goToCart());
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
+        cartPage = new PlaywrightCartPage(inventoryPage.goToCart());
         Assertions.assertFalse(cartPage.hasItem(items.getFirst().getName()));
     }
 
     @And("the number displayed next to the cart icon should decrement by one")
     public void theNumberDisplayedNextToTheCartIconShouldDecrementByOne() {
-        Assertions.assertTrue(webDriver.findElements(By.className("shopping_cart_badge")).isEmpty());
+        Assertions.assertTrue(testContext.page.locator("#shopping_cart_badge").isHidden());
     }
 
     @When("the user adds {int} products to the cart")
     public void theUserAddsProductsToTheCart(int quantity) {
-        List<InventoryItem> items = inventoryPage.getItems();
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
         for (int i = 0; i < quantity; i++) {
             items.get(i).getAddToCartButton().click();
         }
@@ -106,8 +107,8 @@ public class InventoryStepDefs {
 
     @Then("all {int} selected products should be added to the cart")
     public void allSelectedProductsShouldBeAddedToTheCart(int quantity) {
-        List<InventoryItem> items = inventoryPage.getItems();
-        cartPage = new CartPage(inventoryPage.goToCart());
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
+        cartPage = new PlaywrightCartPage(inventoryPage.goToCart());
         for (int i = 0; i < quantity; i++) {
             Assertions.assertTrue(cartPage.hasItem(items.get(i).getTitle()));
         }
@@ -115,32 +116,31 @@ public class InventoryStepDefs {
 
     @And("the cart icon should display the number {int}")
     public void theCartIconShouldDisplayTheNumber(int quantity) {
-        int cartSize = Integer.parseInt(webDriver.findElement(By.className("shopping_cart_badge")).getText());
+        int cartSize = Integer.parseInt(testContext.page.locator(".shopping_cart_badge").textContent());
         Assertions.assertEquals(quantity,cartSize);
     }
 
     @Then("the products should be displayed in alphabetical order \\(A to Z)")
     public void theProductsShouldBeDisplayedInAlphabeticalOrderAToZ() {
-        List<InventoryItem> items = inventoryPage.getItems();
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
         Assertions.assertTrue(inventoryPage.itemsInOrderAZ(items));
     }
 
     @Then("the products should be displayed in reverse alphabetical order \\(Z to A)")
     public void theProductsShouldBeDisplayedInReverseAlphabeticalOrderZToA() {
-        List<InventoryItem> items = inventoryPage.getItems();
+        List<PlaywrightInventoryItem> items = inventoryPage.getItems();
         Assertions.assertTrue(inventoryPage.itemsInOrderZA(items));
     }
 
     @When("the user clicks on a product's name")
-    public void theUserClicksOnAProductSName() {
+    public void theUserClicksOnAProductsName() {
         inventoryPage.getItems().getFirst().getItemLink().click();
-        productPage = new ProductPage(webDriver);
-
+        productPage = new PlaywrightProductPage(testContext);
     }
 
     @Then("the user should be redirected to the product's detail page")
     public void theUserShouldBeRedirectedToTheProductSDetailPage() {
-        Assertions.assertEquals("https://www.saucedemo.com/v1/inventory-item.html?id=4",webDriver.getCurrentUrl());
+        Assertions.assertEquals("https://www.saucedemo.com/v1/inventory-item.html?id=4",testContext.page.url());
     }
 
     @And("the user should see detailed information about the product")

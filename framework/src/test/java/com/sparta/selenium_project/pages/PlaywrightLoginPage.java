@@ -1,7 +1,6 @@
 package com.sparta.selenium_project.pages;
 
 import com.sparta.selenium_project.utils.TestContext;
-import org.openqa.selenium.By;
 
 public class PlaywrightLoginPage {
     private final TestContext context;

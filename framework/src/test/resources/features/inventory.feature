@@ -24,11 +24,16 @@ Feature: Inventory Page Functionality
     Then the products should be displayed in descending order of price
 
   @functional @positive @cart
-  Scenario: Adding a product to the cart
+  Scenario: Adding a product to the cart and checking cart number
+    Given the user is on the "INVENTORY" page
+    When the user clicks the Add to cart button for a product
+    Then the cart icon should display the number 1
+
+  @functional @positive @cart
+  Scenario: Adding a product to the cart and checking cart
     Given the user is on the "INVENTORY" page
     When the user clicks the Add to cart button for a product
     Then the product should be added to the cart
-    And the cart icon should display the number 1
 
   @functional @positive @cart
   Scenario: Removing a product from the cart
@@ -39,11 +44,16 @@ Feature: Inventory Page Functionality
     And the number displayed next to the cart icon should decrement by one
 
   @functional @positive @cart
-  Scenario: Adding multiple products to the cart
+  Scenario: Adding multiple products to the cart and checking cart
     Given the user is on the "INVENTORY" page
     When the user adds 3 products to the cart
     Then all 3 selected products should be added to the cart
-    And the cart icon should display the number 3
+
+  @functional @positive @cart
+  Scenario: Adding multiple products to the cart and checking cart number
+    Given the user is on the "INVENTORY" page
+    When the user adds 3 products to the cart
+    Then the cart icon should display the number 3
 
   @functional @positive
   Scenario: Sorting products by name (A to Z)

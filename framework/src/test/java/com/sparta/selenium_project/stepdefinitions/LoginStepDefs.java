@@ -17,12 +17,7 @@ public class LoginStepDefs {
 
     public LoginStepDefs(){
         this.webDriver = PicoContainerConfig.getContainer().getComponent(WebDriver.class);
-    }
-
-    @Given("the user is on the login page")
-    public void theUserIsOnTheLoginPage() {
-        webDriver.get(ConfigReader.getProperty("base.url"));
-        this.loginPage = new LoginPage(webDriver);
+        loginPage = new LoginPage(webDriver);
     }
 
     @When("the user enters the username {string} and the password {string}")

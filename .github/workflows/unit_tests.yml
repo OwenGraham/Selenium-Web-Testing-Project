@@ -22,5 +22,5 @@ jobs:
           distribution: "adopt"
           
       - name: Build and run specific test with Maven
-        run: mvn -B test -Dtest=RunUnitTest
+        run: mvn test -Dtest="com.sparta.selenium_project.junit.*Test"
         working-directory: framework

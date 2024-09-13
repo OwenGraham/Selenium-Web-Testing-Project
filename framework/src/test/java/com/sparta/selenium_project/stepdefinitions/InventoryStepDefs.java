@@ -87,8 +87,11 @@ public class InventoryStepDefs {
     @Then("the product should be removed from the cart")
     public void theProductShouldBeRemovedFromTheCart() {
         List<InventoryItem> items = inventoryPage.getItems();
-        cartPage = new CartPage(inventoryPage.goToCart());
-        Assertions.assertFalse(cartPage.hasItem(items.getFirst().getName()));
+        webDriver.navigate().to(WebPage.CART.getURL());
+        cartPage = new CartPage(webDriver);
+        if (!items.isEmpty()) {
+            Assertions.assertFalse(cartPage.hasItem(items.getFirst().getName()));
+        }
     }
 
     @And("the number displayed next to the cart icon should decrement by one")

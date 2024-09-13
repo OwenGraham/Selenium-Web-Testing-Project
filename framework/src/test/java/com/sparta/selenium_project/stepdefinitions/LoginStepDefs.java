@@ -33,7 +33,7 @@ public class LoginStepDefs {
 
     @Then("the user should be redirected to the home page")
     public void theUserShouldBeRedirectedToTheHomePage() {
-        Assertions.assertEquals("https://www.saucedemo.com/v1/inventory.html",webDriver.getCurrentUrl());
+        Assertions.assertEquals("https://www.saucedemo.com/inventory.html",webDriver.getCurrentUrl());
     }
 
     @Then("the user should see an error message indicating incorrect credentials")

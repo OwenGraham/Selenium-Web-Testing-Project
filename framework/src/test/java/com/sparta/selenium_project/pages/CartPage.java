@@ -26,7 +26,7 @@ public class CartPage {
                     .setItemLink(element.findElement(By.tagName("a")))
                     .setTitle(element.findElement(By.className("inventory_item_name")).getText())
                     .setDescription(element.findElement(By.className("inventory_item_desc")).getText())
-                    .setPrice(Float.valueOf(element.findElement(By.className("inventory_item_price")).getText()))
+                    .setPrice(Float.valueOf(element.findElement(By.className("inventory_item_price")).getText().substring(1)))
                     .setRemoveButton(element.findElement(By.className("cart_button")))
                     .build();
 

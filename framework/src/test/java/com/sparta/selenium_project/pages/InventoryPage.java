@@ -4,6 +4,9 @@ import com.sparta.selenium_project.utils.InventoryItemBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
@@ -11,7 +14,15 @@ import java.util.List;
 
 public class InventoryPage {
     private WebDriver webDriver;
+
+    @FindBy(className = "shopping_cart_link")
     private WebElement cartButton;
+
+    @FindBy(className = "product_sort_container")
+    private WebElement sortByDropDownElement;
+
+    @FindBy(className = "inventory_item")
+    private List<WebElement> elements;
 
     public InventoryPage(WebDriver webDriver){
         this.webDriver = webDriver;
@@ -19,12 +30,11 @@ public class InventoryPage {
             throw new IllegalStateException("WebDriver instance is not initialized");
         }
 
-        cartButton = webDriver.findElement(By.className("shopping_cart_link"));
+        PageFactory.initElements(webDriver,this);
     }
 
     public List<InventoryItem> getItems(){
         List<InventoryItem> items = new ArrayList<>();
-        List<WebElement> elements = webDriver.findElements(By.className("inventory_item"));
         for (WebElement element : elements){
             InventoryItem item = new InventoryItemBuilder()
                     .setTitle(element.findElement(By.className("inventory_item_name")).getText())
@@ -41,8 +51,7 @@ public class InventoryPage {
     }
 
     public void sortItems(String sortMode){
-        WebElement sortDropDownElement = webDriver.findElement(By.className("product_sort_container"));
-        Select sortDropDown = new Select(sortDropDownElement);
+        Select sortDropDown = new Select(sortByDropDownElement);
 
         if (sortMode.equals("Price (low to high)")){
             sortDropDown.selectByValue("lohi");

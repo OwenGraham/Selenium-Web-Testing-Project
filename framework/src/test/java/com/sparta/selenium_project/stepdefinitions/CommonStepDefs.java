@@ -2,16 +2,15 @@ package com.sparta.selenium_project.stepdefinitions;
 
 import com.sparta.selenium_project.pages.WebPage;
 import com.sparta.selenium_project.utils.ConfigReader;
-import com.sparta.selenium_project.utils.DriverManager;
 import com.sparta.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class CommonStepDefs {
     private WebDriver webDriver;
+    private Object currentPage;
 
     public CommonStepDefs(){
         this.webDriver = PicoContainerConfig.getContainer().getComponent(WebDriver.class);
@@ -30,7 +29,6 @@ public class CommonStepDefs {
                 .domain(".saucedemo.com")
                 .build();
         webDriver.manage().addCookie(cookie);
-        webDriver.navigate().refresh();
     }
 
     @When("the user navigates to the {string} page")

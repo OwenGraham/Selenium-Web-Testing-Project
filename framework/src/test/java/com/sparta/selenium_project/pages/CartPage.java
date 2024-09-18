@@ -3,6 +3,8 @@ package com.sparta.selenium_project.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +12,22 @@ import java.util.List;
 public class CartPage {
     private WebDriver webDriver;
 
+    @FindBy(className = "cart_item")
+    private List<WebElement> elements;
+
+    @FindBy(id = "checkout")
+    public WebElement checkoutButton;
+
+    @FindBy(id = "continue-shopping")
+    public WebElement continueShoppingButton;
+
     public CartPage(WebDriver webDriver){
         this.webDriver = webDriver;
-        if (this.webDriver == null) {
-            throw new IllegalStateException("WebDriver instance is not initialized");
-        }
+        PageFactory.initElements(webDriver,this);
     }
 
     public List<CartItem> getItems(){
         List<CartItem> items = new ArrayList<>();
-        List<WebElement> elements = webDriver.findElements(By.className("cart_item"));
         for (WebElement element : elements){
             CartItem item = new CartItem.Builder()
                     .setQuantity(Integer.parseInt(element.findElement(By.className("cart_quantity")).getText()))

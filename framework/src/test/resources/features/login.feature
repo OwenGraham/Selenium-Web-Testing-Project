@@ -38,10 +38,3 @@ Feature: Login Functionality
     When the user enters the username "locked_out_user" and the password "secret_sauce"
     And the user clicks the login button
     Then the user should see an error message indicating that the account is locked
-
-#  @performance
-#  Scenario: Performance of login system under load
-#    Given the system is under peak load conditions
-#    When the user enters the username "standard_user" and the password "secret_sauce"
-#    And the user clicks the login button
-#    Then the login process should complete within acceptable time limits

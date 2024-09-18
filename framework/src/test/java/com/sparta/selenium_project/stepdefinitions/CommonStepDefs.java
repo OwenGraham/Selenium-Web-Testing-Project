@@ -29,7 +29,6 @@ public class CommonStepDefs {
                 .domain(".saucedemo.com")
                 .build();
         webDriver.manage().addCookie(cookie);
-        webDriver.navigate().refresh();
     }
 
     @When("the user navigates to the {string} page")

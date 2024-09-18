@@ -18,6 +18,9 @@ public class CartPage {
     @FindBy(id = "checkout")
     public WebElement checkoutButton;
 
+    @FindBy(id = "continue-shopping")
+    public WebElement continueShoppingButton;
+
     public CartPage(WebDriver webDriver){
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver,this);

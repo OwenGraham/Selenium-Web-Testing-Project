@@ -7,19 +7,29 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
 import java.lang.reflect.Field;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class LoginUnitTest {
+    @Mock
+    private WebDriver webDriver;
+
     @Mock
     private WebElement usernameField;
 
     @Mock
     private WebElement passwordField;
+
+    @Mock
+    private WebElement errorMessageElement;
 
     @InjectMocks
     private LoginPage loginPage;
@@ -49,5 +59,15 @@ public class LoginUnitTest {
         String password = "password";
         loginPage.enterPassword(password);
         verify(passwordField).sendKeys(password);
+    }
+
+    @Test
+    public void testGetErrorMessage(){
+        String expectedErrorMessage = "Invalid credentials";
+
+        when(webDriver.findElement(By.tagName("h3"))).thenReturn(errorMessageElement);
+        when(errorMessageElement.getText()).thenReturn(expectedErrorMessage);
+
+        assertEquals(expectedErrorMessage,loginPage.getErrorMessage());
     }
 }

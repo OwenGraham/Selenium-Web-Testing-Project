@@ -21,7 +21,7 @@ jobs:
           distribution: "adopt"
           
       - name: Build with Maven (skip tests)
-        run: mvn clean install -DskipTesta
+        run: mvn clean install -DskipTests
         working-directory: framework
 
   test:

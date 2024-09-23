@@ -5,6 +5,7 @@ import com.sparta.selenium_project.pages.CartPage;
 import com.sparta.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
@@ -31,5 +32,10 @@ public class CartStepDefs {
             Assertions.assertFalse(Float.toString(item.getQuantity()).isEmpty());
             Assertions.assertFalse(Float.toString(item.getPrice()).isEmpty());
         }
+    }
+
+    @When("the user clicks the Continue Shopping button")
+    public void theUserClicksTheContinueShoppingButton() {
+        cartPage.continueShoppingButton.click();
     }
 }

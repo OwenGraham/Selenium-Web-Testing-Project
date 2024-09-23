@@ -19,6 +19,14 @@ Feature: Cart Page Functionality
     Then all 3 selected products should be added to the cart
     And each product should display its name, quantity, and price
 
+
+  @cart @functional
+  Scenario: Using Continue Shopping button to return to inventory page as standard_user
+    Given the user is logged in as "standard_user"
+    And the user is on the "CART" page
+    When the user clicks the Continue Shopping button
+    Then the user should be redirected to the home page
+
   @cart @functional @negative
   Scenario: Removing a product from the cart as error_user
     Given the user is logged in as "error_user"
@@ -36,3 +44,10 @@ Feature: Cart Page Functionality
     When the user adds 3 products to the cart
     Then all 3 selected products should be added to the cart
     And each product should display its name, quantity, and price
+
+  @cart @functional
+  Scenario: Using Continue Shopping button to return to inventory page as error_user
+    Given the user is logged in as "error_user"
+    And the user is on the "CART" page
+    When the user clicks the Continue Shopping button
+    Then the user should be redirected to the home page

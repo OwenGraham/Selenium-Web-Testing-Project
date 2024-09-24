@@ -41,6 +41,7 @@ public class LoginUnitTest {
     @BeforeEach
     public void setUp() throws NoSuchFieldException, IllegalAccessException {
         MockitoAnnotations.openMocks(this);
+
         // Using reflection to inject the mock WebElement into the LoginPage
         Field usernameFieldInPage = LoginPage.class.getDeclaredField("usernameField");
         usernameFieldInPage.setAccessible(true); // Allow access to the private field

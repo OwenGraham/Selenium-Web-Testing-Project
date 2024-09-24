@@ -5,7 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9c2dc33-9e02-4615-be35-4aa4b647c6f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/junit/InventoryUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/junit/InventoryUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/junit/LoginUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/junit/LoginUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/CheckoutPageOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/CheckoutPageOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/CheckoutPageThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/CheckoutPageThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/CheckoutPageTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/CheckoutPageTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/InventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/InventoryItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/InventoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/pages/WebPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/pages/WebPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/runners/RunCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/runners/RunCucumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/stepdefinitions/CartStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/stepdefinitions/CartStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/stepdefinitions/CheckoutStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/stepdefinitions/CheckoutStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/stepdefinitions/CommonStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/stepdefinitions/CommonStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/stepdefinitions/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/stepdefinitions/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/stepdefinitions/InventoryStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/stepdefinitions/InventoryStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/stepdefinitions/LoginStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/stepdefinitions/LoginStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/utils/ConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/utils/ConfigReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/utils/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/utils/InventoryItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/utils/InventoryItemBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/utils/PicoContainerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/owengraham/utils/PicoContainerConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +44,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -72,9 +95,9 @@
     "JUnit.RunCucumberTest.executor": "Run",
     "JUnit.RunPlaywrightTest.executor": "Run",
     "JUnit.java in framework.executor": "Run",
+    "JUnit.junit in framework (1).executor": "Run",
     "JUnit.junit in framework.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "testing-dev",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/OwenG/OneDrive/Documents/Employment/Sparta Global/Pre-Assignment/selenium-demo/framework",
@@ -96,7 +119,7 @@
       <command value="git branch" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InventoryUnitTest">
+  <component name="RunManager" selected="JUnit.RunCucumberTest (1)">
     <configuration name="InventoryUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="framework" />
       <extension name="coverage">
@@ -112,77 +135,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryUnitTest.testGoToCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RunCucumberTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="framework" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="PATTERN" value="com.github.owengraham.selenium_project.runners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
-      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
-      <option name="METHOD_NAME" value="testGoToCart" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.github.owengraham.selenium_project.runners" />
+      <option name="MAIN_CLASS_NAME" value="com.github.owengraham.selenium_project.runners.RunCucumberTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryUnitTest.testItemsInOrderAZ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RunCucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="framework" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="PATTERN" value="com.github.owengraham.runners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
-      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
-      <option name="METHOD_NAME" value="testItemsInOrderAZ" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.github.owengraham.runners" />
+      <option name="MAIN_CLASS_NAME" value="com.github.owengraham.runners.RunCucumberTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryUnitTest.testItemsInOrderAZ_Equal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="junit in framework (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="framework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
-      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
-      <option name="METHOD_NAME" value="testItemsInOrderAZ_Equal" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/github/owengraham/junit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryUnitTest.testItemsInOrderAZ_False" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="junit in framework" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="framework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
-      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
-      <option name="METHOD_NAME" value="testItemsInOrderAZ_False" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/sparta/selenium_project/junit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RunCucumberTest (1)" />
+        <item itemvalue="JUnit.RunCucumberTest" />
+        <item itemvalue="JUnit.junit in framework (1)" />
+        <item itemvalue="JUnit.junit in framework" />
         <item itemvalue="JUnit.InventoryUnitTest" />
-        <item itemvalue="JUnit.InventoryUnitTest.testItemsInOrderAZ_Equal" />
-        <item itemvalue="JUnit.InventoryUnitTest.testItemsInOrderAZ_False" />
-        <item itemvalue="JUnit.InventoryUnitTest.testItemsInOrderAZ" />
-        <item itemvalue="JUnit.InventoryUnitTest.testGoToCart" />
       </list>
     </recent_temporary>
   </component>

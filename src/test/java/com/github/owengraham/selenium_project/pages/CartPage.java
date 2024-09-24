@@ -26,6 +26,10 @@ public class CartPage {
         PageFactory.initElements(webDriver,this);
     }
 
+    public void setElements(List<WebElement> elements) {
+        this.elements = elements;
+    }
+
     public List<CartItem> getItems(){
         List<CartItem> items = new ArrayList<>();
         for (WebElement element : elements){

@@ -19,4 +19,4 @@ buildNumber.properties
 chromedriver.exe
 LICENSE.chromedriver
 
-.idea
+.idea/

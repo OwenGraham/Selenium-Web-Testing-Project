@@ -38,4 +38,4 @@ jobs:
           distribution: "adopt"
           
       - name: Run specific tests with Maven
-        run: mvn test -Dtest="com.sparta.selenium_project.junit.*Test"
+        run: mvn test -Dtest="com.github.owengraham.selenium_project.junit.*Test"

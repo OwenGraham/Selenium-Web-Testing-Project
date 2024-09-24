@@ -1,10 +1,9 @@
-package com.sparta.selenium_project.pages;
+package com.github.owengraham.selenium_project.pages;
 
-import com.sparta.selenium_project.utils.InventoryItemBuilder;
+import com.github.owengraham.selenium_project.utils.InventoryItemBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;

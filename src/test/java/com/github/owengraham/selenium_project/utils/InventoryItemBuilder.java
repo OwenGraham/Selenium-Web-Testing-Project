@@ -1,6 +1,6 @@
-package com.sparta.selenium_project.utils;
+package com.github.owengraham.selenium_project.utils;
 
-import com.sparta.selenium_project.pages.InventoryItem;
+import com.github.owengraham.selenium_project.pages.InventoryItem;
 import org.openqa.selenium.WebElement;
 
 public class InventoryItemBuilder{

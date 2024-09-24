@@ -1,19 +1,15 @@
-package com.sparta.selenium_project.junit;
+package com.github.owengraham.selenium_project.junit;
 
-import com.sparta.selenium_project.pages.InventoryItem;
-import com.sparta.selenium_project.pages.InventoryPage;
-import com.sparta.selenium_project.utils.InventoryItemBuilder;
+import com.github.owengraham.selenium_project.pages.InventoryItem;
+import com.github.owengraham.selenium_project.pages.InventoryPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestClassOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.lang.reflect.Field;

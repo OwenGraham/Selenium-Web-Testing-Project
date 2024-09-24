@@ -1,7 +1,5 @@
-package com.sparta.selenium_project.utils;
+package com.github.owengraham.selenium_project.utils;
 
-import com.sparta.selenium_project.utils.DriverManager;
-import org.openqa.selenium.WebDriver;
 import org.picocontainer.DefaultPicoContainer;
 import org.picocontainer.MutablePicoContainer;
 

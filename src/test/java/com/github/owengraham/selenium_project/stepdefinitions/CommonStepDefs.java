@@ -1,8 +1,8 @@
-package com.sparta.selenium_project.stepdefinitions;
+package com.github.owengraham.selenium_project.stepdefinitions;
 
-import com.sparta.selenium_project.pages.WebPage;
-import com.sparta.selenium_project.utils.ConfigReader;
-import com.sparta.selenium_project.utils.PicoContainerConfig;
+import com.github.owengraham.selenium_project.utils.ConfigReader;
+import com.github.owengraham.selenium_project.pages.WebPage;
+import com.github.owengraham.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Cookie;

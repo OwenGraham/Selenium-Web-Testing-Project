@@ -1,15 +1,12 @@
-package com.sparta.selenium_project.stepdefinitions;
+package com.github.owengraham.selenium_project.stepdefinitions;
 
-import com.sparta.selenium_project.pages.CartItem;
-import com.sparta.selenium_project.pages.CartPage;
-import com.sparta.selenium_project.utils.PicoContainerConfig;
+import com.github.owengraham.selenium_project.pages.CartItem;
+import com.github.owengraham.selenium_project.pages.CartPage;
+import com.github.owengraham.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
-
-import java.util.List;
 
 public class CartStepDefs {
     private WebDriver webDriver;

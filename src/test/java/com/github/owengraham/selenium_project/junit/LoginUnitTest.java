@@ -1,6 +1,6 @@
-package com.sparta.selenium_project.junit;
+package com.github.owengraham.selenium_project.junit;
 
-import com.sparta.selenium_project.pages.LoginPage;
+import com.github.owengraham.selenium_project.pages.LoginPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

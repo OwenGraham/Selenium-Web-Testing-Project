@@ -1,16 +1,10 @@
-package com.sparta.selenium_project.stepdefinitions;
+package com.github.owengraham.selenium_project.stepdefinitions;
 
-import com.sparta.selenium_project.utils.ConfigReader;
-import com.sparta.selenium_project.utils.DriverManager;
-import com.sparta.selenium_project.utils.PicoContainerConfig;
-import io.cucumber.java.AfterAll;
+import com.github.owengraham.selenium_project.utils.DriverManager;
+import com.github.owengraham.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
-import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.picocontainer.DefaultPicoContainer;
-import org.picocontainer.MutablePicoContainer;
 
 public class Hooks {
 

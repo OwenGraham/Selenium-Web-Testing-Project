@@ -1,7 +1,7 @@
-package com.sparta.selenium_project.stepdefinitions;
+package com.github.owengraham.selenium_project.stepdefinitions;
 
-import com.sparta.selenium_project.pages.*;
-import com.sparta.selenium_project.utils.PicoContainerConfig;
+import com.github.owengraham.selenium_project.pages.*;
+import com.github.owengraham.selenium_project.utils.PicoContainerConfig;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

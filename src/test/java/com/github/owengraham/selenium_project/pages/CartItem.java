@@ -1,4 +1,4 @@
-package com.sparta.selenium_project.pages;
+package com.github.owengraham.selenium_project.pages;
 
 import org.openqa.selenium.WebElement;
 

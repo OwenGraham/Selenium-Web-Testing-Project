@@ -1,4 +1,4 @@
-package com.sparta.selenium_project.pages;
+package com.github.owengraham.selenium_project.pages;
 
 public enum WebPage {
     LOGIN("https://www.saucedemo.com"),

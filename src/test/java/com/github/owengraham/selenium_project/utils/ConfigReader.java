@@ -1,4 +1,4 @@
-package com.sparta.selenium_project.utils;
+package com.github.owengraham.selenium_project.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -15,14 +15,14 @@ Feature: Inventory Page Functionality
     Scenario: Sorting products by price (low to high) as standard_user
     Given the user is logged in as "standard_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Price (low to high)" option from the sort dropdown
+    When the user selects the "PRICE_LOW_TO_HIGH" option from the sort dropdown
     Then the products should be displayed in ascending order of price
 
   @functional @positive
   Scenario: Sorting products by price (high to low) as standard_user
     Given the user is logged in as "standard_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Price (high to low)" option from the sort dropdown
+    When the user selects the "PRICE_HIGH_TO_LOW" option from the sort dropdown
     Then the products should be displayed in descending order of price
 
   @functional @positive @cart
@@ -66,14 +66,14 @@ Feature: Inventory Page Functionality
   Scenario: Sorting products by name (A to Z) as standard_user
     Given the user is logged in as "standard_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Name (A to Z)" option from the sort dropdown
+    When the user selects the "NAME_A_TO_Z" option from the sort dropdown
     Then the products should be displayed in alphabetical order (A to Z)
 
   @functional @positive
   Scenario: Sorting products by name (Z to A) as standard_user
     Given the user is logged in as "standard_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Name (Z to A)" option from the sort dropdown
+    When the user selects the "NAME_Z_TO_A" option from the sort dropdown
     Then the products should be displayed in reverse alphabetical order (Z to A)
 
   @functional @positive
@@ -95,14 +95,14 @@ Feature: Inventory Page Functionality
     Scenario: Sorting products by price (low to high) as error_user
     Given the user is logged in as "error_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Price (low to high)" option from the sort dropdown
+    When the user selects the "PRICE_LOW_TO_HIGH" option from the sort dropdown
     Then the products should be displayed in ascending order of price
 
   @functional @positive
   Scenario: Sorting products by price (high to low) as error_user
     Given the user is logged in as "error_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Price (high to low)" option from the sort dropdown
+    When the user selects the "PRICE_HIGH_TO_LOW" option from the sort dropdown
     Then the products should be displayed in descending order of price
 
   @functional @positive @cart
@@ -146,14 +146,14 @@ Feature: Inventory Page Functionality
   Scenario: Sorting products by name (A to Z) as error_user
     Given the user is logged in as "error_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Name (A to Z)" option from the sort dropdown
+    When the user selects the "NAME_A_TO_Z" option from the sort dropdown
     Then the products should be displayed in alphabetical order (A to Z)
 
   @functional @positive
   Scenario: Sorting products by name (Z to A) as error_user
     Given the user is logged in as "error_user"
     And the user is on the "INVENTORY" page
-    When the user selects the "Name (Z to A)" option from the sort dropdown
+    When the user selects the "NAME_Z_TO_A" option from the sort dropdown
     Then the products should be displayed in reverse alphabetical order (Z to A)
 
   @functional @positive

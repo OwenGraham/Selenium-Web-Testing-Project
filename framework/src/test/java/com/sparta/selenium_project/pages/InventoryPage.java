@@ -33,6 +33,10 @@ public class InventoryPage {
         PageFactory.initElements(webDriver,this);
     }
 
+    public void setElements(List<WebElement> elements){
+        this.elements = elements;
+    }
+
     public List<InventoryItem> getItems(){
         List<InventoryItem> items = new ArrayList<>();
         for (WebElement element : elements){
@@ -50,18 +54,27 @@ public class InventoryPage {
         return items;
     }
 
-    public void sortItems(String sortMode){
+    public enum SortOption{
+        PRICE_LOW_TO_HIGH("lohi"),
+        PRICE_HIGH_TO_LOW("hilo"),
+        NAME_A_TO_Z("az"),
+        NAME_Z_TO_A("za");
+
+        private final String value;
+
+        SortOption(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
+    public void sortItems(SortOption sortMode){
         Select sortDropDown = new Select(sortByDropDownElement);
 
-        if (sortMode.equals("Price (low to high)")){
-            sortDropDown.selectByValue("lohi");
-        } else if (sortMode.equals("Price (high to low)")) {
-            sortDropDown.selectByValue("hilo");
-        } else if (sortMode.equals("Name (A to Z)")) {
-            sortDropDown.selectByValue("az");
-        } else if (sortMode.equals("Name (Z to A)")) {
-            sortDropDown.selectByValue("za");
-        }
+        sortDropDown.selectByValue(sortMode.getValue());
     }
 
     public WebDriver goToCart(){

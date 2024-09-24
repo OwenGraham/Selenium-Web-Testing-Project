@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9c2dc33-9e02-4615-be35-4aa4b647c6f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2lVcTUQ6SoFOuwK0OwbAJ7m7riN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Feature: cart-page.executor": "Run",
+    "Cucumber Java.Feature: checkout.executor": "Run",
+    "Cucumber Java.Feature: inventory.executor": "Run",
+    "Cucumber Java.Feature: login.executor": "Run",
+    "Cucumber Java.Scenario: Adding a product to the cart.executor": "Run",
+    "Cucumber Java.Scenario: Adding multiple products to the cart and checking cart.executor": "Run",
+    "Cucumber Java.Scenario: Adding multiple products to the cart.executor": "Run",
+    "Cucumber Java.Scenario: Filling out checkout information with valid data as standard_user.executor": "Run",
+    "Cucumber Java.Scenario: Initiating checkout process as standard_user.executor": "Run",
+    "Cucumber Java.Scenario: Removing a product from the cart (1).executor": "Run",
+    "Cucumber Java.Scenario: Removing a product from the cart as standard_user.executor": "Run",
+    "Cucumber Java.Scenario: Removing a product from the cart.executor": "Run",
+    "Cucumber Java.Scenario: Sorting products by name (A to Z).executor": "Run",
+    "Cucumber Java.Scenario: Sorting products by name (Z to A).executor": "Run",
+    "Cucumber Java.Scenario: Sorting products by price (high to low).executor": "Run",
+    "Cucumber Java.Scenario: Sorting products by price (low to high).executor": "Run",
+    "Cucumber Java.Scenario: Submitting checkout information with missing first name as standard_user.executor": "Run",
+    "Cucumber Java.Scenario: Using Continue Shopping button to return to inventory page as error_user.executor": "Run",
+    "Cucumber Java.Scenario: Using Continue Shopping button to return to inventory page as standard_user.executor": "Run",
+    "Cucumber Java.Scenario: Viewing product details from the inventory page.executor": "Run",
+    "Cucumber Java.Scenario: Viewing products in the cart.executor": "Run",
+    "Cucumber Java.Scenario: Viewing the inventory page with available products.executor": "Run",
+    "Cucumber Java.Scenario: Viewing the order summary with item, tax, and total price as standard_user.executor": "Run",
+    "JUnit.InventoryUnitTest.executor": "Run",
+    "JUnit.InventoryUnitTest.testGetItems.executor": "Run",
+    "JUnit.InventoryUnitTest.testGetItemsNoProducts.executor": "Run",
+    "JUnit.InventoryUnitTest.testGoToCart.executor": "Run",
+    "JUnit.InventoryUnitTest.testItemsInOrderAZ.executor": "Run",
+    "JUnit.InventoryUnitTest.testItemsInOrderAZ_Equal.executor": "Run",
+    "JUnit.InventoryUnitTest.testItemsInOrderAZ_False.executor": "Run",
+    "JUnit.InventoryUnitTest.testSortItems.executor": "Run",
+    "JUnit.LoginUnitTest.enterUsernameTest.executor": "Run",
+    "JUnit.LoginUnitTest.executor": "Run",
+    "JUnit.LoginUnitTest.test.executor": "Run",
+    "JUnit.LoginUnitTest.testGetErrorMessage.executor": "Run",
+    "JUnit.LoginUnitTest.testGetErrorMessage_NoElement.executor": "Run",
+    "JUnit.RunCucumberTest.executor": "Run",
+    "JUnit.RunPlaywrightTest.executor": "Run",
+    "JUnit.java in framework.executor": "Run",
+    "JUnit.junit in framework.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "testing-dev",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/OwenG/OneDrive/Documents/Employment/Sparta Global/Pre-Assignment/selenium-demo/framework",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\OwenG\OneDrive\Documents\Employment\Sparta Global\Pre-Assignment\new selenium project clone\Selenium-Web-Testing-Project\framework\src\test\resources\webdrivers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\OwenG\OneDrive\Documents\Employment\Sparta Global\Pre-Assignment\selenium-demo\framework\src\test\resources\features" />
+      <recent name="C:\Users\OwenG\OneDrive\Documents\Employment\Sparta Global\Pre-Assignment\Selenium-Web-Testing-Project\framework\src\test\java\com\sparta\selenium_project\pages" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="git status" />
+      <command value="git branch" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.InventoryUnitTest">
+    <configuration name="InventoryUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryUnitTest.testGoToCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
+      <option name="METHOD_NAME" value="testGoToCart" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryUnitTest.testItemsInOrderAZ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
+      <option name="METHOD_NAME" value="testItemsInOrderAZ" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryUnitTest.testItemsInOrderAZ_Equal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
+      <option name="METHOD_NAME" value="testItemsInOrderAZ_Equal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryUnitTest.testItemsInOrderAZ_False" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.selenium_project.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.selenium_project.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.selenium_project.junit.InventoryUnitTest" />
+      <option name="METHOD_NAME" value="testItemsInOrderAZ_False" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.InventoryUnitTest" />
+        <item itemvalue="JUnit.InventoryUnitTest.testItemsInOrderAZ_Equal" />
+        <item itemvalue="JUnit.InventoryUnitTest.testItemsInOrderAZ_False" />
+        <item itemvalue="JUnit.InventoryUnitTest.testItemsInOrderAZ" />
+        <item itemvalue="JUnit.InventoryUnitTest.testGoToCart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9c2dc33-9e02-4615-be35-4aa4b647c6f2" name="Changes" comment="" />
+      <created>1725268693622</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725268693622</updated>
+    </task>
+    <servers />
+  </component>
+</project>

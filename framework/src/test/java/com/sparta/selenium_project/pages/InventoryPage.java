@@ -26,13 +26,20 @@ public class InventoryPage {
 
     public InventoryPage(WebDriver webDriver){
         this.webDriver = webDriver;
-        if (this.webDriver == null) {
-            throw new IllegalStateException("WebDriver instance is not initialized");
-        }
 
         PageFactory.initElements(webDriver,this);
     }
 
+    public Select getSortDropDown() {
+        return new Select(sortByDropDownElement);
+    }
+
+    //Setter for list of product elements, for unit testing
+    public void setElements(List<WebElement> elements){
+        this.elements = elements;
+    }
+
+    //Get a list of all products on the inventory page as InventoryItem objects
     public List<InventoryItem> getItems(){
         List<InventoryItem> items = new ArrayList<>();
         for (WebElement element : elements){
@@ -50,25 +57,36 @@ public class InventoryPage {
         return items;
     }
 
-    public void sortItems(String sortMode){
-        Select sortDropDown = new Select(sortByDropDownElement);
+    //enum for getting the value of an option from the sort drop-down menu, so that the Gherkin scripts can use a more readable version
+    public enum SortOption{
+        PRICE_LOW_TO_HIGH("lohi"),
+        PRICE_HIGH_TO_LOW("hilo"),
+        NAME_A_TO_Z("az"),
+        NAME_Z_TO_A("za");
 
-        if (sortMode.equals("Price (low to high)")){
-            sortDropDown.selectByValue("lohi");
-        } else if (sortMode.equals("Price (high to low)")) {
-            sortDropDown.selectByValue("hilo");
-        } else if (sortMode.equals("Name (A to Z)")) {
-            sortDropDown.selectByValue("az");
-        } else if (sortMode.equals("Name (Z to A)")) {
-            sortDropDown.selectByValue("za");
+        private final String value;
+
+        SortOption(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
         }
     }
 
+    //select the sort mode given by the step definition from the drop-down menu
+    public void sortItems(SortOption sortMode, Select sortDropDown){
+        sortDropDown.selectByValue(sortMode.getValue());
+    }
+
+    //click the cart button
     public WebDriver goToCart(){
         cartButton.click();
         return webDriver;
     }
 
+    //check that the items are displayed in alphabetical order from A to Z
     public Boolean itemsInOrderAZ(List<InventoryItem> items){
         for (int i = 0; i < items.size() - 1; i++) {
             if (items.get(i).getTitle().compareTo(items.get(i + 1).getTitle()) > 0) {
@@ -78,6 +96,7 @@ public class InventoryPage {
         return true;
     }
 
+    //check that the items are displayed in alphabetical order from Z to A
     public Boolean itemsInOrderZA(List<InventoryItem> items){
         for (int i = 0; i < items.size() - 1; i++) {
             if (items.get(i).getTitle().compareTo(items.get(i + 1).getTitle()) < 0) {

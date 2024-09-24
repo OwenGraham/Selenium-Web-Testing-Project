@@ -39,7 +39,7 @@ public class InventoryStepDefs {
 
     @When("the user selects the {string} option from the sort dropdown")
     public void theUserSelectsTheOptionFromTheSortDropdown(String sortMode) {
-        inventoryPage.sortItems(sortMode);
+        inventoryPage.sortItems(InventoryPage.SortOption.valueOf(sortMode), inventoryPage.getSortDropDown());
     }
 
     @Then("the products should be displayed in ascending order of price")

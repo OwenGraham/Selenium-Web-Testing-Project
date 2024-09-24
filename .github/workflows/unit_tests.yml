@@ -22,7 +22,6 @@ jobs:
           
       - name: Build with Maven (skip tests)
         run: mvn clean install -DskipTests
-        working-directory: framework
 
   test:
     runs-on: ubuntu-latest
@@ -39,5 +38,4 @@ jobs:
           distribution: "adopt"
           
       - name: Run specific tests with Maven
-        run: mvn test -Dtest="com.sparta.selenium_project.junit.*Test"
-        working-directory: framework
+        run: mvn test -Dtest="com.github.owengraham.selenium_project.junit.*Test"

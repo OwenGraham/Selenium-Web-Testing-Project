@@ -22,5 +22,5 @@ jobs:
           distribution: "adopt"
           
       - name: Build and run specific test with Maven
-        run: mvn test -Dtest="com.sparta.selenium_project.runners.*Test"
+        run: mvn test -Dtest="com.github.owengraham.selenium_project.runners.*Test"
         working-directory: framework

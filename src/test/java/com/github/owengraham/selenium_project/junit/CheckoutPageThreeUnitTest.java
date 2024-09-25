@@ -22,6 +22,7 @@ public class CheckoutPageThreeUnitTest {
         // Initialise mocks
         MockitoAnnotations.openMocks(this);
 
+        // Initialise SUT and inject mock
         checkoutPageThree = new CheckoutPageThree(completeHeader);
     }
 

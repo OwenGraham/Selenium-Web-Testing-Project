@@ -19,10 +19,12 @@ public class CheckoutPageThree {
         PageFactory.initElements(webDriver,this);
     }
 
+    // Constructor for dependency injection in unit tests
     public CheckoutPageThree(WebElement completeHeader) {
         this.completeHeader = completeHeader;
     }
 
+    // Return the message on the page
     public String getMessage(){
         return completeHeader.getText();
     }

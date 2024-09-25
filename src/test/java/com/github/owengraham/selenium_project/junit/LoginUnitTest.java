@@ -3,7 +3,6 @@ package com.github.owengraham.selenium_project.junit;
 import com.github.owengraham.selenium_project.pages.LoginPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.openqa.selenium.By;
@@ -11,8 +10,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-import java.lang.reflect.Field;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -35,44 +32,45 @@ public class LoginUnitTest {
     @Mock
     private WebElement errorMessageElement;
 
-    @InjectMocks
     private LoginPage loginPage;
 
     @BeforeEach
     public void setUp() throws NoSuchFieldException, IllegalAccessException {
+        // Initialise mocks
         MockitoAnnotations.openMocks(this);
 
-        // Using reflection to inject the mock WebElement into the LoginPage
-        Field usernameFieldInPage = LoginPage.class.getDeclaredField("usernameField");
-        usernameFieldInPage.setAccessible(true); // Allow access to the private field
-        usernameFieldInPage.set(loginPage, usernameField); // Inject the mock WebElement
-
-        Field passwordFieldInPage = LoginPage.class.getDeclaredField("passwordField");
-        passwordFieldInPage.setAccessible(true);
-        passwordFieldInPage.set(loginPage,passwordField);
-
-        Field loginButtonInPage = LoginPage.class.getDeclaredField("loginButton");
-        loginButtonInPage.setAccessible(true);
-        loginButtonInPage.set(loginPage,loginButton);
+        // Initialising LoginPage and injecting mocks
+        loginPage = new LoginPage(webDriver,usernameField,passwordField,loginButton);
     }
 
     @Test
-    public void enterUsernameTest(){
+    public void testEnterUsername(){
         String username = "username";
+
+        // Call the method and pass it the string "username"
         loginPage.enterUsername(username);
+
+        // Check that the string "username" is sent to the username field on the page
         verify(usernameField).sendKeys(username);
     }
 
     @Test
-    public void enterPasswordTest(){
+    public void testEnterPassword(){
         String password = "password";
+
+        // Call the method and pass it the string "password"
         loginPage.enterPassword(password);
+
+        // Check that the string "password" is sent to the password field on the page
         verify(passwordField).sendKeys(password);
     }
 
     @Test
     public void testLogin(){
+        // Call the method
         loginPage.login();
+
+        // Check that the login button on the page is clicked
         verify(loginButton).click();
     }
 
@@ -80,15 +78,25 @@ public class LoginUnitTest {
     public void testGetErrorMessage(){
         String expectedErrorMessage = "Invalid credentials";
 
-        when(webDriver.findElement(By.tagName("h3"))).thenReturn(errorMessageElement);
+        // Mock the behaviour of the error message element
         when(errorMessageElement.getText()).thenReturn(expectedErrorMessage);
 
-        assertEquals(expectedErrorMessage,loginPage.getErrorMessage());
+        // Mock the behaviour of the WebDriver to return the mocked error message element
+        when(webDriver.findElement(By.tagName("h3"))).thenReturn(errorMessageElement);
+
+        // Call the method
+        String actualErrorMessage = loginPage.getErrorMessage();
+
+        // Check the method correctly extracts and returns the error message from the page
+        assertEquals(expectedErrorMessage,actualErrorMessage);
     }
 
     @Test
     public void testGetErrorMessage_NoElement(){
+        // Mock the behaviour of the WebElement to throw an exception when it tries to find a h3 HTML element
         when(webDriver.findElement(By.tagName("h3"))).thenThrow(NoSuchElementException.class);
+
+        // Check that the method throws an exception when called
         assertThrows(NoSuchElementException.class, () -> {
             loginPage.getErrorMessage();
         });

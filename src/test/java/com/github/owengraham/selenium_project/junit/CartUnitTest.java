@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,29 +26,21 @@ public class CartUnitTest {
     @Mock
     private WebElement continueShoppingButton;
 
-    @Mock
-    private WebElement element1;
-
-    @Mock
-    private WebElement element2;
-
-    @InjectMocks
     private CartPage cartPage;
 
     @BeforeEach
     public void setUp() throws NoSuchFieldException, IllegalAccessException {
+        // Initialise the mocks
         MockitoAnnotations.openMocks(this);
 
-        Field checkoutButtonInPage = CartPage.class.getDeclaredField("checkoutButton");
-        checkoutButtonInPage.set(cartPage,checkoutButton);
-
-        Field continueShoppingButtonInPage = CartPage.class.getDeclaredField("continueShoppingButton");
-        continueShoppingButtonInPage.set(cartPage,continueShoppingButton);
+        // Initialise the SUT and inject mocks
+        cartPage = new CartPage(checkoutButton,continueShoppingButton);
     }
 
     @Test
     public void testGetItems(){
-        List<WebElement> elements = new ArrayList<>();
+        // Mock the first element
+        WebElement element1 = mock(WebElement.class);
 
         WebElement quantityElement1 = mock(WebElement.class);
         when(quantityElement1.getText()).thenReturn("1");
@@ -71,7 +64,8 @@ public class CartUnitTest {
         WebElement removeButtonElement1 = mock(WebElement.class);
         when(element1.findElement(By.className("cart_button"))).thenReturn(removeButtonElement1);
 
-        elements.add(element1);
+        // Mock the second element
+        WebElement element2 = mock(WebElement.class);
 
         WebElement quantityElement2 = mock(WebElement.class);
         when(quantityElement2.getText()).thenReturn("1");
@@ -95,14 +89,16 @@ public class CartUnitTest {
         WebElement removeButtonElement2 = mock(WebElement.class);
         when(element2.findElement(By.className("cart_button"))).thenReturn(removeButtonElement2);
 
-        elements.add(element2);
+        // Set the SUT's elements list to a list containing the two mocked elements
+        cartPage.setElements(Arrays.asList(element1,element2));
 
-        cartPage.setElements(elements);
-
+        // Call the method
         List<CartItem> items = cartPage.getItems();
 
+        // Check the list returned by the method has the correct size
         assertEquals(2,items.size());
 
+        // Check that the objects returned by the method have the correct data
         assertEquals(1,items.getFirst().getQuantity());
         assertEquals(itemLinkElement1,items.getFirst().getItemLink());
         assertEquals("Cart item title",items.getFirst().getTitle());
@@ -113,7 +109,8 @@ public class CartUnitTest {
 
     @Test
     void testHasItem_True() {
-        List<WebElement> elements = new ArrayList<>();
+        // Mock an element
+        WebElement element1 = mock(WebElement.class);
 
         WebElement quantityElement1 = mock(WebElement.class);
         when(quantityElement1.getText()).thenReturn("1");
@@ -137,16 +134,17 @@ public class CartUnitTest {
         WebElement removeButtonElement1 = mock(WebElement.class);
         when(element1.findElement(By.className("cart_button"))).thenReturn(removeButtonElement1);
 
-        elements.add(element1);
+        // Set the SUT's elements list as a singleton list containing the mocked WebElement
+        cartPage.setElements(List.of(element1));
 
-        cartPage.setElements(elements);
-
+        // Check that the method returns true if the SUT's elements list contains an element with the given title
         assertTrue(cartPage.hasItem("Cart item title"));
     }
 
     @Test
     void testHasItem_False() {
-        List<WebElement> elements = new ArrayList<>();
+        // Mock a WebElement
+        WebElement element1 = mock(WebElement.class);
 
         WebElement quantityElement1 = mock(WebElement.class);
         when(quantityElement1.getText()).thenReturn("1");
@@ -170,18 +168,19 @@ public class CartUnitTest {
         WebElement removeButtonElement1 = mock(WebElement.class);
         when(element1.findElement(By.className("cart_button"))).thenReturn(removeButtonElement1);
 
-        elements.add(element1);
+        // Set the SUT's elements list as a singleton list containing the mocked WebElement
+        cartPage.setElements(List.of(element1));
 
-        cartPage.setElements(elements);
-
+        // Check that the method returns false if the SUT's elements list contains no element with title matching the one given
         assertFalse(cartPage.hasItem("Not here"));
     }
 
     @Test
     void testHasItem_EmptyList() {
-        List<WebElement> elements = new ArrayList<>();
-        cartPage.setElements(elements);
+        // Set the SUT's elements list as an empty list
+        cartPage.setElements(new ArrayList<>());
 
+        // Check that the method returns false when there are no items
         assertFalse(cartPage.hasItem("Cart item title"));
     }
 }

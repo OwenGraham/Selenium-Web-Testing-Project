@@ -23,12 +23,23 @@ public class InventoryPage {
     @FindBy(className = "inventory_item")
     private List<WebElement> elements;
 
+    private Select sortBySelect;
+
     public InventoryPage(WebDriver webDriver){
         this.webDriver = webDriver;
 
         PageFactory.initElements(webDriver,this);
+
+        sortBySelect = getSortDropDown();
     }
 
+    // Constructor for dependency injection in unit tests
+    public InventoryPage(WebElement cartButton, Select sortBySelect) {
+        this.cartButton = cartButton;
+        this.sortBySelect = sortBySelect;
+    }
+
+    // Convert the WebElement sortByDropDownElement to a Selenium Select object
     public Select getSortDropDown() {
         return new Select(sortByDropDownElement);
     }

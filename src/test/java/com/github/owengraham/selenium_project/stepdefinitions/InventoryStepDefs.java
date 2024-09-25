@@ -138,7 +138,6 @@ public class InventoryStepDefs {
     public void theUserClicksOnAProductSName() {
         inventoryPage.getItems().getFirst().getItemLink().click();
         productPage = new ProductPage(webDriver);
-
     }
 
     @Then("the user should be redirected to the product's detail page")

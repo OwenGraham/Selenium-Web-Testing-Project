@@ -26,10 +26,18 @@ public class CartPage {
         PageFactory.initElements(webDriver,this);
     }
 
+    // Constructor for dependency injection in tests
+    public CartPage(WebElement checkoutButton, WebElement continueShoppingButton) {
+        this.checkoutButton = checkoutButton;
+        this.continueShoppingButton = continueShoppingButton;
+    }
+
+    // Setter for elements list for use in unit tests
     public void setElements(List<WebElement> elements) {
         this.elements = elements;
     }
 
+    // Return all products displayed on the cart page as a List of CartItem objects
     public List<CartItem> getItems(){
         List<CartItem> items = new ArrayList<>();
         for (WebElement element : elements){
@@ -41,12 +49,12 @@ public class CartPage {
                     .setPrice(Float.valueOf(element.findElement(By.className("inventory_item_price")).getText().substring(1)))
                     .setRemoveButton(element.findElement(By.className("cart_button")))
                     .build();
-
             items.add(item);
         }
         return items;
     }
 
+    // Return true if a product with title matching the one provided is in the cart, false if not
     public Boolean hasItem(String title){
         Boolean found = false;
         for (CartItem item : getItems()){

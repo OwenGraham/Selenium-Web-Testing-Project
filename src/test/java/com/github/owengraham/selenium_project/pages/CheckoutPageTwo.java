@@ -46,6 +46,7 @@ public class CheckoutPageTwo {
         PageFactory.initElements(webDriver, this);
     }
 
+    // Constructor for dependency injection in unit tests
     public CheckoutPageTwo(List<WebElement> itemElements,WebElement paymentInfoLabel, WebElement deliveryInfoLabel, WebElement subTotal, WebElement tax, WebElement totalPrice, WebElement cancelButton, WebElement finishButton) {
         this.itemElements = itemElements;
         this.paymentInfoLabel = paymentInfoLabel;
@@ -62,41 +63,52 @@ public class CheckoutPageTwo {
         this.itemElements = itemElements;
     }
 
+    // Return the payment info on the page
     public String getPaymentInfo(){
         return paymentInfoLabel.getText();
     }
 
+    // Return the delivery info on the page
     public String getDeliveryInfo(){
         return deliveryInfoLabel.getText();
     }
 
+    // Return the subtotal on the page
     public Float getSubTotal(){
+        // Use the regex to extract the float value from the text in the subtotal element on the page
         Matcher matcher = pattern.matcher(subTotal.getText());
         if (matcher.find()) {
             String value = matcher.group(1);
             return Float.valueOf(value);
         }
+        // Return 0 if no pattern matching the regex is found
         else return 0f;
     }
 
+    // Return the subtotal on the page
     public Float getTax(){
+        // Use the regex to extract the float value from the text in the tax element on the page
         Matcher matcher = pattern.matcher(tax.getText());
         if (matcher.find()) {
             String value = matcher.group(1);
             return Float.valueOf(value);
         }
+        // Return 0 if no pattern matching the regex is found
         else return 0f;
     }
 
     public Float getTotalPrice(){
+        // Use the regex to extract the float value from the text in the total price element on the page
         Matcher matcher = pattern.matcher(totalPrice.getText());
         if (matcher.find()) {
             String value = matcher.group(1);
             return Float.valueOf(value);
         }
+        // Return 0 if no pattern matching the regex is found
         else return 0f;
     }
 
+    // Return all products displayed on checkout page two as a List of CartItem objects
     public List<CartItem> getItems(){
         List<CartItem> items = new ArrayList<>();
         for (WebElement itemElement : itemElements){
@@ -112,6 +124,7 @@ public class CheckoutPageTwo {
         return items;
     }
 
+    // Return the sum of the prices of all products in the cart
     public Float calculateSubTotal(){
         Float subTotal = 0.0f;
         for (CartItem item : getItems()){

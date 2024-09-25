@@ -24,8 +24,6 @@ public class LoginPage {
     }
 
     // Constructor for dependency injection in tests
-
-
     public LoginPage(WebDriver webDriver, WebElement usernameField, WebElement passwordField, WebElement loginButton) {
         this.webDriver = webDriver;
         this.usernameField = usernameField;
@@ -33,18 +31,22 @@ public class LoginPage {
         this.loginButton = loginButton;
     }
 
+    // Enter the given string in the username field on the page
     public void enterUsername(String username){
         usernameField.sendKeys(username);
     }
 
+    // Enter the given string in the password field on the page
     public void enterPassword(String password){
         passwordField.sendKeys(password);
     }
 
+    // Click the login button on the page
     public void login(){
         loginButton.click();
     }
 
+    // Return the text of the error message on the page
     public String getErrorMessage(){
         WebElement errorMessage = webDriver.findElement(By.tagName("h3"));
         return errorMessage.getText();

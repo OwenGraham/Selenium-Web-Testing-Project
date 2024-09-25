@@ -33,11 +33,13 @@ public class InventoryPage {
         sortBySelect = getSortDropDown();
     }
 
+    // Constructor for dependency injection in unit tests
     public InventoryPage(WebElement cartButton, Select sortBySelect) {
         this.cartButton = cartButton;
         this.sortBySelect = sortBySelect;
     }
 
+    // Convert the WebElement sortByDropDownElement to a Selenium Select object
     public Select getSortDropDown() {
         return new Select(sortByDropDownElement);
     }

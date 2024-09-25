@@ -26,6 +26,12 @@ public class CartPage {
         PageFactory.initElements(webDriver,this);
     }
 
+    // Constructor for dependency injection in tests
+    public CartPage(WebElement checkoutButton, WebElement continueShoppingButton) {
+        this.checkoutButton = checkoutButton;
+        this.continueShoppingButton = continueShoppingButton;
+    }
+
     public void setElements(List<WebElement> elements) {
         this.elements = elements;
     }

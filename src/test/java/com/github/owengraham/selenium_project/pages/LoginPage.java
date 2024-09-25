@@ -23,6 +23,16 @@ public class LoginPage {
         PageFactory.initElements(webDriver,this);
     }
 
+    // Constructor for dependency injection in tests
+
+
+    public LoginPage(WebDriver webDriver, WebElement usernameField, WebElement passwordField, WebElement loginButton) {
+        this.webDriver = webDriver;
+        this.usernameField = usernameField;
+        this.passwordField = passwordField;
+        this.loginButton = loginButton;
+    }
+
     public void enterUsername(String username){
         usernameField.sendKeys(username);
     }

@@ -23,10 +23,19 @@ public class InventoryPage {
     @FindBy(className = "inventory_item")
     private List<WebElement> elements;
 
+    private Select sortBySelect;
+
     public InventoryPage(WebDriver webDriver){
         this.webDriver = webDriver;
 
         PageFactory.initElements(webDriver,this);
+
+        sortBySelect = getSortDropDown();
+    }
+
+    public InventoryPage(WebElement cartButton, Select sortBySelect) {
+        this.cartButton = cartButton;
+        this.sortBySelect = sortBySelect;
     }
 
     public Select getSortDropDown() {

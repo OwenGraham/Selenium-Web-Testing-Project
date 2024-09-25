@@ -28,6 +28,15 @@ public class CheckoutPageOne {
         PageFactory.initElements(webDriver,this);
     }
 
+    // Constructor for dependency injection in tests
+    public CheckoutPageOne(WebDriver webDriver, WebElement firstNameField, WebElement lastNameField, WebElement postCodeField, WebElement continueButton) {
+        this.webDriver = webDriver;
+        this.firstNameField = firstNameField;
+        this.lastNameField = lastNameField;
+        this.postCodeField = postCodeField;
+        this.continueButton = continueButton;
+    }
+
     public void enterFirstName(String firstName){
         firstNameField.sendKeys(firstName);
     }

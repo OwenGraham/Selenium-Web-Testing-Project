@@ -19,6 +19,10 @@ public class CheckoutPageThree {
         PageFactory.initElements(webDriver,this);
     }
 
+    public CheckoutPageThree(WebElement completeHeader) {
+        this.completeHeader = completeHeader;
+    }
+
     public String getMessage(){
         return completeHeader.getText();
     }

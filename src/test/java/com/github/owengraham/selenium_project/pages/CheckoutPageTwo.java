@@ -46,6 +46,22 @@ public class CheckoutPageTwo {
         PageFactory.initElements(webDriver, this);
     }
 
+    public CheckoutPageTwo(List<WebElement> itemElements,WebElement paymentInfoLabel, WebElement deliveryInfoLabel, WebElement subTotal, WebElement tax, WebElement totalPrice, WebElement cancelButton, WebElement finishButton) {
+        this.itemElements = itemElements;
+        this.paymentInfoLabel = paymentInfoLabel;
+        this.deliveryInfoLabel = deliveryInfoLabel;
+        this.subTotal = subTotal;
+        this.tax = tax;
+        this.totalPrice = totalPrice;
+        this.cancelButton = cancelButton;
+        this.finishButton = finishButton;
+    }
+
+    // Setter for list of items for unit testing purposes
+    public void setItemElements(List<WebElement> itemElements) {
+        this.itemElements = itemElements;
+    }
+
     public String getPaymentInfo(){
         return paymentInfoLabel.getText();
     }

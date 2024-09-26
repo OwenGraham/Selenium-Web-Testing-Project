@@ -197,7 +197,7 @@ The framework's dependencies should be updated to the latest versions in the pro
         </div>
         <div class="rfv832DGvJuGyzFuMjXC" style="    grid-column-end: span 4; display: flex; flex-direction: column-reverse; justify-content: center; padding: 1.5em;">
             <dt class="xmSDOQ_c8MimWxT035vV" style="    margin-top: .25em; margin-top: .25em;">last run</dt>
-            <dd class="OFz0nWrlbIgqinwc4usO" style="font-weight: bold; font-size: 1.25em;">4 minutes ago</dd>
+            <dd class="OFz0nWrlbIgqinwc4usO" style="font-weight: bold; font-size: 1.25em;">26/09/24 13:30</dd>
         </div>
         <div class="rfv832DGvJuGyzFuMjXC" style="    grid-column-end: span 4; display: flex; flex-direction: column-reverse; justify-content: center; padding: 1.5em;">
             <dt class="xmSDOQ_c8MimWxT035vV" style="    color: var(--cucumber-code-text-color, #666); margin-top: .25em;">duration</dt>

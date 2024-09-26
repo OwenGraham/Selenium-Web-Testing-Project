@@ -9,7 +9,7 @@ import org.junit.platform.suite.api.*;
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME,value = "com.github.owengraham.selenium_project.stepdefinitions")
 //To run tests with combinations of tags, uncomment this line and add the desired tags to the value string
-//@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@Get and @Happy")
+//@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@functional and @negative")
 @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "html:cucumber-report/cucumber.html")
 public class RunCucumberTest {
 

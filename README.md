@@ -212,7 +212,7 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Actual Result   | Clicking the remove from cart button has no effect                                                                                                                                                |
 | Test Data       | Item: Sauce Labs Backpack                                                                                                                                                                         |
 | Environment     | OS: Widows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                                                                    |
-| Future Steps    |                                                                                                                                                                                                   | 
+
 
 </div>
 
@@ -232,7 +232,6 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Actual Result   | When an option is selected from the dropdown, an alert appears with the message "Sorting is broken! This error has been reported to Backtrace." |
 | Test Data       |                                                                                                                                                 |
 | Environment     | OS: Windows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                 |
-| Future Steps    |                                                                                                                                                 |
 
 </div>
 
@@ -252,7 +251,7 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Actual Result   | clicking add to cart button has no effect                                                                                                                                                                        |
 | Test Data       | product: Sauce Labs Bolt T-Shirt                                                                                                                                                                                 |
 | Environment     | OS: Windows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                                                                                  |
-| Future Steps    |                                                                                                                                                                                                                  |
+
 
 </div>
 
@@ -272,7 +271,7 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Actual Result   | Entering keys with the last name field selected does not change text displayed in field from "Last Name"                                                                                                                                                                                                                  |
 | Test Data       |                                                                                                                                                                                                                                                                                                                           |
 | Environment     | OS: Windows Home x64, Browser: Chrome version 128.0.6613.138                                                                                                                                                                                                                                                              |
-| Future Steps    |                                                                                                                                                                                                                                                                                                                           |
+
 
 </div>
 
@@ -292,7 +291,7 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Actual Result   | Tax is $2.40                                                                                                                                                                                                              |
 | Test Data       | Product in cart is x1 Sauce Labs Backpack                                                                                                                                                                                 |
 | Environment     | OS: Windows Home x64, Browser: Chrome version 128.0.6613.138                                                                                                                                                              |
-| Future Steps    |                                                                                                                                                                                                                           |
+
 
 </div>
 
@@ -312,5 +311,4 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Actual Result   | Clicking "Finish" button on checkout step two page has no effect                                                       |
 | Test Data       |                                                                                                                        |
 | Environment     | OS: Windows Home x64, Browser: Chrome version 128.0.6613.138                                                           |
-| Future Steps    |                                                                                                                        |
 </div>

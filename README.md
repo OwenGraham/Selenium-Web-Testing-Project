@@ -4,8 +4,8 @@
 
 This is a web testing project for testing the functionality of the [Sauce Demo](https://www.saucedemo.com/) made-for-testing e-commerce site, created by Owen Graham.
 
-This test automation framework, developed using Selenium, is designed for efficient end-to-end testing of web applications.
-It supports multiple browsers, integrates with CI/CD pipelines, and uses Cucumber for BDD-style testing.
+This test automation framework, developed using Selenium, is designed for efficient end-to-end testing of the web application.
+It integrates with CI/CD pipelines, uses Cucumber for BDD-style testing, and includes unit testing with Junit and Mockito for internal methods.
 The project demonstrates advanced test automation skills and best practices in setting up scalable and maintainable test architectures.
 
 For further information contact the owner of this repository.

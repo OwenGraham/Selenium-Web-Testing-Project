@@ -5,6 +5,8 @@
 - [Overview](#overview)
 - [Setup Instructions](#setup-instructions)
 - [Framework Architecture](#framework-architecture)
+- [CI Pipeline](#ci-pipeline)
+- [Maintenance](#maintenance)
 - [Features, Scenarios, and Defects](#features-scenarios-and-defects)
 - [Test Metrics](#test-metrics)
 - [Defects](#defects)
@@ -12,8 +14,11 @@
 ## Overview
 
 This is a web testing project for testing the functionality of the [Sauce Demo](https://www.saucedemo.com/) made-for-testing e-commerce site, created by Owen Graham. 
-The project uses Cucumber for BDD and Selenium for web test automation. 
-The purpose of the project is to demonstrate my ability to write test cases, automate them in Selenium, integrate them into a CI pipeline, and unit test helper methods using Mockito.
+
+This test automation framework, developed using Selenium, is designed for efficient end-to-end testing of web applications. 
+It supports multiple browsers, integrates with CI/CD pipelines, and uses Cucumber for BDD-style testing. 
+The project demonstrates advanced test automation skills and best practices in setting up scalable and maintainable test architectures.
+
 For further information contact the owner of this repository.
 
 ## Setup Instructions
@@ -32,8 +37,17 @@ In order to download the project and run the tests follow these instructions:
 
 ### Running in suites
 
-Tests are organised into suites using junit tag annotations, such as @functional and @negative. 
-To run the tests in suites, add the name of the ga, without the "@", in quotation marks to the `@IncludeTags` annotation in `src/test/java/com/github/owengraham/selenium_project/runners/RunCucumberTest.java`.
+Tests are organised into suites using junit tag annotations, such as @functional and @negative.
+
+To run the tests in suites, use the `groups` system property of Maven's `test` command, and set the value as the name of the tag the scenarios you want to run are annotated with.
+
+`mvn test -Dgroup=functional`
+
+To run multiple suites, use a list of tags, separated by commas and enclosed in quotation marks.
+
+`mvn test -Dgroups="invalid_login,locked_out_user"`
+
+Alternatively, in an editor, add the name of the tag, without the "@", in quotation marks to the `@IncludeTags` annotation in `src/test/java/com/github/owengraham/selenium_project/runners/RunCucumberTest.java`.
 
 #### Example
 ```java
@@ -62,22 +76,37 @@ options.addArguments("headless");
 
 ![Login Screen Recording](Documentation/recordings/login.gif)
 
+### Running in an IDE
+
+For best results, open the project in an IDE with the Cucumber plugin, and run the tests directly from the .feature files in `src/test/resources/features`.
+
+![Screen recording of running scenario from IDE](Documentation/recordings/running-in-ide.gif)
+
 ## Framework Architecture
 
-The framework is written in Java, uses Maven for dependency, and build management predominantly built around Cucumber and Selenium.
+The framework is written in Java, uses Maven for dependency and build management predominantly built around Cucumber and Selenium.
+
+### Selenium
+
+Selenium automates the interactions with the website by controlling a WebDriver object. The setup of the WebDriver, including setting options such as running in headed/headless mode, and setting the window size, is in `src/test/java/com/github/owengraham/selenium_project/utils/DriverManager.java`.
+
+The framework uses the Page Object Model to improve extensibility and maintainability, with a class for each page of the website, and some page elements (such as products shown on the inventory page), containing locators for page elements and methods for interactions for use in step definitions. These classes can be found in `src/test/java/com/github/owengraham/selenium_project/pages`.
+
+### Cucumber
+
 Tests are written in Gherkin features and scenarios, which can be found at `src/test/resources/features`, and are linked to the step definitions in `src/test/java/com/github/owengraham/selenium_project/stepdefinitions` via `src/test/java/com/github/owengraham/selenium_project/runners/RunCucumberTest.java`.
 Step definitions are split into a class per feature, and those which are used in multiple features are in `CommonStepDefs.java`.
 
-Selenium automates the interactions with the website by controlling a WebDriver object. The setup of the WebDriver, including setting options such as running in headed/headless mode, and setting the window size, is in `src/test/java/com/github/owengraham/selenium_project/utils/DriverManager.java`.
-The WebDriver is passed between different step definition classes using a Cucumber PicoContainer, which is initialised and configured in `src/test/java/com/github/owengraham/selenium_project/utils/PicoContainerConfig.java`.
-
 `@Before` and `@After` methods in `src/test/java/com/github/owengraham/selenium_project/stepdefinitions/Hooks.java` manage resetting the state of the WebDriver between tests.  
 
-The framework uses the Page Object Model to improve extensibility and maintainability, with a class for each page of the website, and some page elements (such as products shown on the inventory page), containing locators for page elements and methods for interactions for use in step definitions. These classes can be found in `src/test/java/com/github/owengraham/selenium_project/pages`. 
+The WebDriver is passed between different step definition classes using a Cucumber PicoContainer, which is initialised and configured in `src/test/java/com/github/owengraham/selenium_project/utils/PicoContainerConfig.java`.
+
+### Unit Testing (Junit and Mockito)
+
 All methods within the page classes have been unit tested using Junit and Mockito, ensuring they work in edge cases such as when there are no products in the website's inventory. These tests are integrated into a CI pipeline for quality control of the framework itself.
 The unit tests can be found in `src/test/java/com/github/owengraham/selenium_project/junit`, and can be run by navigating to the repository root in a terminal and running the command `mvn test -Dtest="com.github.owengraham.selenium_project.junit.*Test"`.
 
-### CI Pipeline
+## CI Pipeline
 
 The GitHub repository for the project includes a CI pipeline using GitHub action workflows for building, testing, and branch protection.
 The workflow files for the CI pipeline can be found in `.github/workflows`.
@@ -92,7 +121,7 @@ These jobs are enforced as checks in the branch protection rules of the `test` b
 The workflow in `cucumber_tests.yml` runs on pushes and pull requests to the `main` branch. This workflow enforces that all the Cucumber tests must pass for code to be pushed up to this branch.
 This is so that if the code for the website itself were in the same project as this test framework, bugs would be caught before reaching the live website.
 
-### Maintenance
+## Maintenance
 
 The framework's dependencies should be updated to the latest versions in the properties of `POM.xml`:
 ```xml

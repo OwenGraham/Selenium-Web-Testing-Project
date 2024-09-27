@@ -7,6 +7,7 @@
 - [Framework Architecture](#framework-architecture)
 - [Features, Scenarios, and Defects](#features-scenarios-and-defects)
 - [Test Metrics](#test-metrics)
+- [Defects](#defects)
 
 ## Overview
 
@@ -164,7 +165,15 @@ The framework's dependencies should be updated to the latest versions in the pro
 
 ![Test metrics from Cucumber report](Documentation/images/Cucumber%20report%20metrics.png)
 
-## Defects 
+## Defects
+
+<div style="text-align: center;">
+
+![Screen recording of defect "Remove button on some products on inventory page not working when logged in as error_user"](Documentation/recordings/remove-from-cart-defect.gif)
+
+</div>
+
+<div style="display: table; margin: auto;">
 
 | Defect          | Remove button on some products on inventory page not working when logged in as error_user                                                                                                         |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -176,6 +185,16 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Environment     | OS: Widows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                                                                    |
 | Future Steps    |                                                                                                                                                                                                   | 
 
+</div>
+
+<div style="text-align: center;">
+
+![Screen recording of defect "Product sorting functionality not working as error_user"](Documentation/recordings/sort-defect.gif)
+
+</div>
+
+<div style="display: table; margin: auto;">
+
 | Defect          | Product sorting functionality not working as error_user                                                                                         |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | Date            | 13/09/2024                                                                                                                                      |
@@ -186,15 +205,15 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Environment     | OS: Windows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                 |
 | Future Steps    |                                                                                                                                                 |
 
-| Defect          | Add to cart button not working for some products on inventory page as error_user                                                                                                                                 |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Date            | 13/09/2024                                                                                                                                                                                                       |
-| Details         | When logged in as error_user, the add to cart button on some products on the inventory page does not work                                                                                                        |
-| Expected Result | clicking add to cart button on any inventory page item should change the button to remove from cart, the number next to the cart icon should increment by one, and the product should be listed on the cart page |
-| Actual Result   | clicking add to cart button has no effect                                                                                                                                                                        |
-| Test Data       | product: Sauce Labs Bolt T-Shirt                                                                                                                                                                                 |
-| Environment     | OS: Windows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                                                                                  |
-| Future Steps    |                                                                                                                                                                                                                  |
+</div>
+
+<div style="text-align: center;">
+
+![Screen recording of defect "Add to cart button not working for some products on inventory page as error_user"](Documentation/recordings/add-to-cart-defect.gif)
+
+</div>
+
+<div style="display: table; margin: auto;">
 
 | Defect          | Add to cart button not working for some products on inventory page as error_user                                                                                                                                 |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -205,6 +224,16 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Test Data       | product: Sauce Labs Bolt T-Shirt                                                                                                                                                                                 |
 | Environment     | OS: Windows 11 Home x64, Browser: Chrome Version 128.0.6613.137                                                                                                                                                  |
 | Future Steps    |                                                                                                                                                                                                                  |
+
+</div>
+
+<div style="text-align: center;">
+
+![Screen recording of defect "Last name field on checkout page one not working for error_user"](Documentation/recordings/last-name-defect.gif)
+
+</div>
+
+<div style="display: table; margin: auto;">
 
 | Defect          | Last name field on checkout page one not working for error_user                                                                                                                                                                                                                                                           |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -216,6 +245,16 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Environment     | OS: Windows Home x64, Browser: Chrome version 128.0.6613.138                                                                                                                                                                                                                                                              |
 | Future Steps    |                                                                                                                                                                                                                                                                                                                           |
 
+</div>
+
+<div style="text-align: center;">
+
+![Screen recording of defect "Tax not calculated correctly"](Documentation/recordings/add-to-cart-defect.gif)
+
+</div>
+
+<div style="display: table; margin: auto;">
+
 | Defect          | Tax not calculated correctly                                                                                                                                                                                              |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Date            | 18/09/2024                                                                                                                                                                                                                |
@@ -225,3 +264,24 @@ The framework's dependencies should be updated to the latest versions in the pro
 | Test Data       | Product in cart is x1 Sauce Labs Backpack                                                                                                                                                                                 |
 | Environment     | OS: Windows Home x64, Browser: Chrome version 128.0.6613.138                                                                                                                                                              |
 | Future Steps    |                                                                                                                                                                                                                           |
+
+</div>
+
+<div style="text-align: center;">
+
+![Screen recording of defect ""Finish" button on checkout step two page not working for error_user"](Documentation/recordings/finish-defect.gif)
+
+</div>
+
+<div style="display: table; margin: auto;">
+
+| Defect          | "Finish" button on checkout step two page not working for error_user                                                   |
+|-----------------|------------------------------------------------------------------------------------------------------------------------|
+| Date            | 18/09/2024                                                                                                             |
+| Details         | When logged in as error_user, "Finish" button does not navigate to checkout complete page.                             |
+| Expected Result | Clicking "Finish" button on checkout step two page should navigate to https://www.saucedemo.com/checkout-complete.html |
+| Actual Result   | Clicking "Finish" button on checkout step two page has no effect                                                       |
+| Test Data       |                                                                                                                        |
+| Environment     | OS: Windows Home x64, Browser: Chrome version 128.0.6613.138                                                           |
+| Future Steps    |                                                                                                                        |
+</div>

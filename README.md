@@ -1,8 +1,17 @@
 # Selenium Web Testing Project
 
+## Overview
+
+This is a web testing project for testing the functionality of the [Sauce Demo](https://www.saucedemo.com/) made-for-testing e-commerce site, created by Owen Graham.
+
+This test automation framework, developed using Selenium, is designed for efficient end-to-end testing of web applications.
+It supports multiple browsers, integrates with CI/CD pipelines, and uses Cucumber for BDD-style testing.
+The project demonstrates advanced test automation skills and best practices in setting up scalable and maintainable test architectures.
+
+For further information contact the owner of this repository.
+
 ## Contents 
 
-- [Overview](#overview)
 - [Setup Instructions](#setup-instructions)
 - [Framework Architecture](#framework-architecture)
 - [CI Pipeline](#ci-pipeline)
@@ -10,16 +19,6 @@
 - [Features, Scenarios, and Defects](#features-scenarios-and-defects)
 - [Test Metrics](#test-metrics)
 - [Defects](#defects)
-
-## Overview
-
-This is a web testing project for testing the functionality of the [Sauce Demo](https://www.saucedemo.com/) made-for-testing e-commerce site, created by Owen Graham. 
-
-This test automation framework, developed using Selenium, is designed for efficient end-to-end testing of web applications. 
-It supports multiple browsers, integrates with CI/CD pipelines, and uses Cucumber for BDD-style testing. 
-The project demonstrates advanced test automation skills and best practices in setting up scalable and maintainable test architectures.
-
-For further information contact the owner of this repository.
 
 ## Setup Instructions
 

@@ -41,7 +41,7 @@ Tests are organised into suites using junit tag annotations, such as @functional
 
 To run the tests in suites, use the `groups` system property of Maven's `test` command, and set the value as the name of the tag the scenarios you want to run are annotated with.
 
-`mvn test -Dgroup=functional`
+`mvn test -Dgroups=functional`
 
 To run multiple suites, use a list of tags, separated by commas and enclosed in quotation marks.
 

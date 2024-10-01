@@ -45,7 +45,7 @@ To run the tests in suites, use the `groups` system property of Maven's `test` c
 
 To run multiple suites, use a list of tags, separated by commas and enclosed in quotation marks.
 
-`mvn test -Dgroups="invalid_login,locked_out_user"`
+`mvn test -Dgroups="locked_out_user,invalid_login"`
 
 Alternatively, in an editor, add the name of the tag, without the "@", in quotation marks to the `@IncludeTags` annotation in `src/test/java/com/github/owengraham/selenium_project/runners/RunCucumberTest.java`.
 
@@ -69,7 +69,11 @@ public class RunCucumberTest {
 
 ### Running in headed mode
 
-To see the tests running on a screen remove the following line from the method `getChromeOptions()` in `src/test/java/com/github/owengraham/selenium_project/utils/DriverManager.java`:
+To see the tests running on a screen, set the headless system property of Maven's test command to false.
+
+`mvn test -Dheadless=false`
+
+Alternatively, in an editor, remove the following line from the method `getChromeOptions()` in `src/test/java/com/github/owengraham/selenium_project/utils/DriverManager.java`:
 ```java
 options.addArguments("headless"); 
 ```
